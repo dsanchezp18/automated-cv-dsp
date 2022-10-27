@@ -33,7 +33,6 @@ CV <- create_CV_object(
 # Add a custom font
 
 font_add_google("Exo", family = "Exo")
-
 showtext_auto()
 
 ```
