@@ -109,9 +109,13 @@ CV$skills %>%
       )+
   labs(y = '',
        x = '')
-  
 
 ```
+
+```{r}
+CV %<>% print_text_block('industry_experience_aside')
+```
+
 
 Disclaimer {#disclaimer}
 --------------------------------------------------------------------------------
