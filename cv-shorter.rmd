@@ -141,7 +141,7 @@ Education {data-icon=graduation-cap data-concise=true}
 CV %<>% print_section('education')
 ```
 
-Industry Experience {data-icon=suitcase}
+Select Work Experience {data-icon=suitcase}
 --------------------------------------------------------------------------------
 
 ```{r}
