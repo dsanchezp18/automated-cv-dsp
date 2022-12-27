@@ -75,17 +75,11 @@ CV %>% print_contact_info
 <center>
 
 Brief Profile
---------------------------------------------------------------------------------
-
-- Research computing specialist with avid critical thinking and analytical writing abilities
-
-- Applied econometrics, data analytics and visualization using R, Power BI and Tableau  
-
-
+-------------------------------------------------------------------------------- 
+- Research computing specialist through avid critical thinking and analytical writing abilities
 
 Languages
 --------------------------------------------------------------------------------
-
 **Spanish**: Native
 
 **English**: Advanced
@@ -160,7 +154,6 @@ CV %<>% print_section('certificates')
 ```
 
 ::: 
-
 ```{r}
 CV %<>% print_section('teaching_positions')
 ```

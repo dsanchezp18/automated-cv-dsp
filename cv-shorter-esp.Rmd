@@ -1,6 +1,6 @@
 ---
 title: "Daniel Sánchez's CV - Shorter in Spanish"
-author: Daniel Sánchez
+author: Daniel Sánchez Pazmiño
 date: "`r Sys.Date()`"
 params:
   pdf_mode:
@@ -11,6 +11,15 @@ output:
     self_contained: true
 ---
 <meta charset="utf-8"> 
+
+```{css, echo=FALSE}
+.pagedjs_page:not(:first-of-type) {
+  --sidebar-width: 0rem;
+  --sidebar-background-color: #ffffff;
+  --main-width: calc(var(--content-width) - var(--sidebar-width));
+  --decorator-horizontal-margin: 0.2in;
+}
+```
 
 ```{r, include=FALSE}
 knitr::opts_chunk$set(
@@ -113,7 +122,6 @@ CV$skills %>%
 
 ```
 
-
 Disclaimer {#disclaimer}
 --------------------------------------------------------------------------------
 
@@ -121,7 +129,7 @@ Realizado con los paquetes de R [**datadrivencv**](https://github.com/nstrayer/d
 
 El código fuente está disponbile en [mi perfil de GitHub](https://github.com/dsanchezp18/automated-cv-dsp).
 
-Actualizado por última vez en noviembre 2022.
+Actualizado por última vez en diciembre 2022.
 
 Main
 ================================================================================
@@ -156,7 +164,7 @@ CV %<>% print_section('teaching_positions')
 CV %<>% print_section('research_positions')
 ```
 
-Research {data-icon=book}
+Investigación {data-icon=book}
 --------------------------------------------------------------------------------
 ```{r}
 CV %<>% print_section('academic_articles')
@@ -164,10 +172,6 @@ CV %<>% print_section('academic_articles')
 
 Adicionales {data-icon=area-chart}
 --------------------------------------------------------------------------------
-
-```{r}
-CV %<>% print_section('extras')
-```
 
 ```{r}
 CV %<>% print_section('certificates')
