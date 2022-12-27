@@ -42,7 +42,6 @@ showtext_auto()
 
 ```
 
-
 ```{r}
 # When in pdf export mode the little dots are unaligned, so fix that with some conditional CSS.
 if(params$pdf_mode) {
@@ -57,7 +56,6 @@ if(params$pdf_mode) {
 
 Aside
 ================================================================================
-
 Contact {#contact}
 --------------------------------------------------------------------------------
 ```{r}
@@ -66,7 +64,7 @@ CV %>% print_contact_info
 
 <center>
 
-[`r fa('envelope', fill = 'black', height = '2em')`](mailto:dsanchezp998@gmail.com)
+[`r fa('envelope', fill = 'black', height = '2em')`](mailto:daniel_sanchez@sfu.ca)
 [`r fa('linkedin', fill = 'black', height = '2em')`](https://www.linkedin.com/in/dsanchezp18/)
 [`r fa('github', fill = 'black', height = '2em')`](https://github.com/dsanchezp18)
 [`r fa('link', fill = 'black', height = '2em')`](https://daniel-ec.netlify.app)
@@ -75,6 +73,15 @@ CV %>% print_contact_info
 [`r fa('r', fill = 'black', height = '2em')`](https://rpubs.com/dsanchezp998)
 
 <center>
+
+Brief Profile
+--------------------------------------------------------------------------------
+
+- Research computing specialist with avid critical thinking and analytical writing abilities
+
+- Applied econometrics, data analytics and visualization using R, Power BI and Tableau  
+
+
 
 Languages
 --------------------------------------------------------------------------------
@@ -113,7 +120,6 @@ CV$skills %>%
 
 ```
 
-
 Disclaimer {#disclaimer}
 --------------------------------------------------------------------------------
 
@@ -134,13 +140,6 @@ Daniel Sánchez {#title}
 CV %<>% print_text_block("intro") 
 ```
 
-Education {data-icon=graduation-cap data-concise=true}
---------------------------------------------------------------------------------
-
-```{r}
-CV %<>% print_section('education')
-```
-
 Select Work Experience {data-icon=suitcase}
 --------------------------------------------------------------------------------
 
@@ -152,14 +151,23 @@ CV %<>% print_section('industry_positions')
 CV %<>% print_section('research_positions')
 ```
 
-```{r}
-CV %<>% print_section('teaching_positions')
-```
+:::aside
 
-Additional Education {data-icon=area-chart}
+Certificates {data-icon=area-chart}
 --------------------------------------------------------------------------------
-
 ```{r}
 CV %<>% print_section('certificates')
 ```
 
+::: 
+
+```{r}
+CV %<>% print_section('teaching_positions')
+```
+
+Education {data-icon=graduation-cap data-concise=true}
+--------------------------------------------------------------------------------
+
+```{r}
+CV %<>% print_section('education')
+```

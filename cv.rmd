@@ -37,7 +37,6 @@ showtext_auto()
 
 ```
 
-
 ```{r}
 # When in pdf export mode the little dots are unaligned, so fix that with some conditional CSS.
 if(params$pdf_mode) {
@@ -52,6 +51,7 @@ if(params$pdf_mode) {
 
 Aside
 ================================================================================
+
 Contact {#contact}
 --------------------------------------------------------------------------------
 ```{r}
@@ -106,8 +106,6 @@ CV$skills %>%
   
 
 ```
-
-
 Disclaimer {#disclaimer}
 --------------------------------------------------------------------------------
 
