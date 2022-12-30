@@ -31,7 +31,6 @@ CV <- create_CV_object(
 )
 
 # Add a custom font
-
 CV$entries_data<-
   CV$entries_data %>% 
   filter(in_resume == T)
@@ -54,42 +53,52 @@ if(params$pdf_mode) {
 }
 ```
 
-Aside
-================================================================================
-Contact {#contact}
---------------------------------------------------------------------------------
-```{r}
-CV %>% print_contact_info
+```{css, echo=FALSE}
+.pagedjs_page:not(:first-of-type) {
+  --sidebar-width: 0rem;
+  --sidebar-background-color: #ffffff;
+  --main-width: calc(var(--content-width) - var(--sidebar-width));
+  --decorator-horizontal-margin: 0.2in;
+}
 ```
 
-<center>
+Aside
+================================================================================
+`r fa('envelope')` daniel_sanchez@sfu.ca 
+
+`r fa('phone')` +1 236-308-8801
+
+`r fa('link')` daniel-ec.netlify.app
 
 [`r fa('envelope', fill = 'black', height = '2em')`](mailto:daniel_sanchez@sfu.ca)
 [`r fa('linkedin', fill = 'black', height = '2em')`](https://www.linkedin.com/in/dsanchezp18/)
-[`r fa('github', fill = 'black', height = '2em')`](https://github.com/dsanchezp18)
 [`r fa('link', fill = 'black', height = '2em')`](https://daniel-ec.netlify.app)
+[`r fa('github', fill = 'black', height = '2em')`](https://github.com/dsanchezp18)
 [`r fa('twitter', fill = 'black', height = '2em')`](https://twitter.com/daniel_ec18)
 [`r fa('book', fill = 'black', height = '2em')`](https://scholar.google.com/citations?user=Xt2yEYgAAAAJ&hl=en)
 [`r fa('r', fill = 'black', height = '2em')`](https://rpubs.com/dsanchezp998)
 
-<center>
-
-Brief Profile
--------------------------------------------------------------------------------- 
-- Research computing specialist through avid critical thinking and analytical writing abilities
-
-Languages
---------------------------------------------------------------------------------
-**Spanish**: Native
-
-**English**: Advanced
-
-**French**: Basic
-
-Skills {#skills}
+Highlights
 --------------------------------------------------------------------------------
 
-```{r, fig.height= 8}
+```{r}
+# Note the special double pipe so we modify the CV object in place
+CV %<>% print_text_block("intro1")
+```
+
+```{r}
+# Note the special double pipe so we modify the CV object in place
+CV %<>% print_text_block("intro2")
+```
+
+```{r}
+# Note the special double pipe so we modify the CV object in place
+CV %<>% print_text_block("intro3")
+```
+
+Technical Skills {#skills}
+--------------------------------------------------------------------------------
+```{r, fig.height= 6}
 CV$skills %>%
   mutate(skill2 = fct_reorder(skill, level)) %>% 
   ggplot(aes(skill2, level, label = label))+
@@ -110,18 +119,18 @@ CV$skills %>%
       )+
   labs(y = '',
        x = '')
-  
-
 ```
 
 Disclaimer {#disclaimer}
 --------------------------------------------------------------------------------
 
-Made with the R packages [**datadrivencv**](https://github.com/nstrayer/datadrivencv) and [**pagedown**](https://github.com/rstudio/pagedown).
+Made with the R packages [**datadrivencv**](https://github.com/nstrayer/datadrivencv) and [**pagedown**](https://github.com/rstudio/pagedown). 
 
 The source code is available [on my GitHub profile](https://github.com/dsanchezp18/automated-cv-dsp).
 
 Last updated on `r format(Sys.Date(), format = '%B %Y')`.
+
+This is a short CV. Please visit my [personal website](https://daniel-ec.netlify.app/about.html) for more information.
 
 Main
 ================================================================================
@@ -129,23 +138,33 @@ Main
 Daniel Sánchez {#title}
 --------------------------------------------------------------------------------
 
-```{r}
-# Note the special double pipe so we modify the CV object in place
-CV %<>% print_text_block("intro") 
-```
-
-Select Work Experience {data-icon=suitcase}
+Select Industry Experience {data-icon=suitcase}
 --------------------------------------------------------------------------------
-
 ```{r}
 CV %<>% print_section('industry_positions')
 ```
 
+Education {data-icon=graduation-cap data-concise=true}
+--------------------------------------------------------------------------------
+```{r}
+CV %<>% print_section('education')
+```
+
+Select Teaching Experience {data-icon=chalkboard-teacher}
+--------------------------------------------------------------------------------
+```{r}
+CV %<>% print_section('teaching_positions')
+```
+
+Select Research Experience & Projects {data-icon=laptop}
+--------------------------------------------------------------------------------
 ```{r}
 CV %<>% print_section('research_positions')
 ```
 
-:::aside
+```{r}
+CV %<>% print_section('academic_articles')
+```
 
 Certificates {data-icon=area-chart}
 --------------------------------------------------------------------------------
@@ -153,14 +172,5 @@ Certificates {data-icon=area-chart}
 CV %<>% print_section('certificates')
 ```
 
-::: 
-```{r}
-CV %<>% print_section('teaching_positions')
-```
 
-Education {data-icon=graduation-cap data-concise=true}
---------------------------------------------------------------------------------
 
-```{r}
-CV %<>% print_section('education')
-```
