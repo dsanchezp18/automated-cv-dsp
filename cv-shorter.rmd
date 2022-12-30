@@ -53,15 +53,6 @@ if(params$pdf_mode) {
 }
 ```
 
-```{css, echo=FALSE}
-.pagedjs_page:not(:first-of-type) {
-  --sidebar-width: 0rem;
-  --sidebar-background-color: #ffffff;
-  --main-width: calc(var(--content-width) - var(--sidebar-width));
-  --decorator-horizontal-margin: 0.2in;
-}
-```
-
 Aside
 ================================================================================
 `r fa('envelope')` daniel_sanchez@sfu.ca 
@@ -121,14 +112,9 @@ CV$skills %>%
        x = '')
 ```
 
-Disclaimer {#disclaimer}
---------------------------------------------------------------------------------
+**Spanish**: Native, **English**: Advanced (TOEFL 119/120), **French**: Basic.
 
-Made with the R packages [**datadrivencv**](https://github.com/nstrayer/datadrivencv) and [**pagedown**](https://github.com/rstudio/pagedown). 
-
-The source code is available [on my GitHub profile](https://github.com/dsanchezp18/automated-cv-dsp).
-
-Last updated on `r format(Sys.Date(), format = '%B %Y')`.
+Last updated on `r format(Sys.Date(), format = '%B %Y')`. Made with the R packages [**datadrivencv**](https://github.com/nstrayer/datadrivencv) and [**pagedown**](https://github.com/rstudio/pagedown). Source code available on [GitHub](https://github.com/dsanchezp18/automated-cv-dsp). 
 
 This is a short CV. Please visit my [personal website](https://daniel-ec.netlify.app/about.html) for more information.
 
@@ -152,6 +138,17 @@ CV %<>% print_section('education')
 
 Select Teaching Experience {data-icon=chalkboard-teacher}
 --------------------------------------------------------------------------------
+
+::: aside
+
+Certificates {data-icon=area-chart}
+--------------------------------------------------------------------------------
+```{r}
+CV %<>% print_section('certificates')
+```
+
+:::
+
 ```{r}
 CV %<>% print_section('teaching_positions')
 ```
@@ -165,12 +162,3 @@ CV %<>% print_section('research_positions')
 ```{r}
 CV %<>% print_section('academic_articles')
 ```
-
-Certificates {data-icon=area-chart}
---------------------------------------------------------------------------------
-```{r}
-CV %<>% print_section('certificates')
-```
-
-
-
