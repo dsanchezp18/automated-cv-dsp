@@ -12,6 +12,15 @@ output:
 ---
 <meta charset="utf-8"> 
 
+```{css, echo=FALSE}
+.pagedjs_page:not(:first-of-type) {
+  --sidebar-width: 0rem;
+  --sidebar-background-color: #ffffff;
+  --main-width: calc(var(--content-width) - var(--sidebar-width));
+  --decorator-horizontal-margin: 0.2in;
+}
+```
+
 ```{r, include=FALSE}
 knitr::opts_chunk$set(
   results='asis', 
@@ -106,12 +115,13 @@ CV$skills %>%
   
 
 ```
+
 Disclaimer {#disclaimer}
 --------------------------------------------------------------------------------
 
-Made with the R packages [**datadrivencv**](https://github.com/nstrayer/datadrivencv) and [**pagedown**](https://github.com/rstudio/pagedown).
+Made with the R packages [**datadrivencv**](https://github.com/nstrayer/datadrivencv) and [**pagedown**](https://github.com/rstudio/pagedown). 
 
-The source code is available [on my GitHub profile](https://github.com/dsanchezp18/automated-cv-dsp).
+Source code available on [GitHub](https://github.com/dsanchezp18/automated-cv-dsp). 
 
 Last updated on `r format(Sys.Date(), format = '%B %Y')`.
 
@@ -133,20 +143,11 @@ Education {data-icon=graduation-cap data-concise=true}
 CV %<>% print_section('education')
 ```
 
-Teaching Experience {data-icon=chalkboard-teacher}
---------------------------------------------------------------------------------
-
-```{r}
-CV %<>% print_section('teaching_positions')
-```
-
 Research Experience {data-icon=chalkboard-teacher}
 --------------------------------------------------------------------------------
-::: aside
 ```{r}
 CV %<>% print_text_block('research_experience_aside')
 ```
-:::
 
 ```{r}
 CV %<>% print_section('research_positions')
@@ -159,18 +160,18 @@ Industry Experience {data-icon=briefcase}
 CV %<>% print_section('industry_positions')
 ```
 
+Teaching Experience {data-icon=chalkboard-teacher}
+--------------------------------------------------------------------------------
+
+```{r}
+CV %<>% print_section('teaching_positions')
+```
+
 Research {data-icon=book}
 --------------------------------------------------------------------------------
 
 ```{r}
 CV %<>% print_section('academic_articles')
-```
-
-Awards {data-icon=award}
---------------------------------------------------------------------------------
-
-```{r}
-CV %<>% print_section('awards')
 ```
 
 Extracurriculars {data-icon=star}
